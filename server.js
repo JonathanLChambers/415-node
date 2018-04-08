@@ -3,11 +3,17 @@ var chalk = require('chalk');
 var app = express();
 var router = express.Router();
 
-router.get('/test', function(req, res) {
+router.get('/emr', function(req, res) {
+    res.status(200).send('all of emr details');
+});
+router.get('/emr/id', function(req, res) {
+    res.status(200).send('emr id');
+});
+router.post('/emr', function(req, res) {
     res.status(200).send('Hello world');
 });
 
-app.use('/api', router);
+app.use('/rest', router);
 
 app.listen(1069, function(err) {
     if (err) {
